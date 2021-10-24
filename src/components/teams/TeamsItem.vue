@@ -11,7 +11,16 @@ export default {
   props: ['id', 'name', 'memberCount'],
   computed: {
     teamMemberLink() {
-      return '/teams/' + this.id;
+      // return '/teams/' + this.id;
+      // this will usseful when you change the path of the route it will still work because we modified the route path not name
+      // same you can use route push() method too
+      // always prefer named routes instead of path routes
+      return {
+        name: 'team-members',
+        params: {
+          teamId: this.id,
+        },
+      };
     },
   },
 };
