@@ -11,12 +11,17 @@ const app = createApp(App);
 const router = createRouter({
   routes: [
     {
+      path: '/',
+      redirect: '/teams'
+    },
+    {
       path: '/teams',
       component: TeamsList
     },
     {
       path: '/teams/:teamId',
-      component: TeamMemeber
+      component: TeamMemeber,
+      props: true
     },
     {
       path: '/users',

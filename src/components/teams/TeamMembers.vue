@@ -20,7 +20,7 @@ export default {
   components: {
     UserItem,
   },
-  inject: ['teams', 'users'],
+  inject: ['teamId', 'teams', 'users'],
   data() {
     return {
       teamName: '',
@@ -45,8 +45,14 @@ export default {
     },
   },
   created() {
-    //console.log(this.$route);
+    console.log(this.$route);
     this.loadTeamMembers(this.$route);
+  },
+  mounted() {
+    console.log(
+      'this is the props which we received through the props ',
+      this.teamId
+    );
   },
   watch: {
     $route(newRoute) {
