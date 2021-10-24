@@ -17,12 +17,14 @@ const router = createRouter({
     },
     {
       path: '/teams',
-      component: TeamsList
-    },
-    {
-      path: '/teams/:teamId',
-      component: TeamMemeber,
-      props: true
+      component: TeamsList,
+      children: [
+        {
+          path: '/teams/:teamId',
+          component: TeamMemeber,
+          props: true
+        }
+      ]
     },
     {
       path: '/users',
