@@ -10,8 +10,22 @@
         </li>
       </ul>
     </nav>
+    <button @click="confirmUser">Confirm</button>
   </header>
 </template>
+
+<script>
+export default {
+  methods: {
+    confirmUser() {
+      this.$router.push('/teams');
+
+      // there are buch of the mehods which we can find here in the console log
+      console.log(this.$router);
+    },
+  },
+};
+</script>
 
 
 <style scoped>
