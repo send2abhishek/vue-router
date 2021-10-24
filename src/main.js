@@ -5,6 +5,7 @@ import App from './App.vue';
 import TeamsList from './components/teams/TeamsList.vue';
 import UserLists from './components/users/UsersList.vue';
 import TeamMemeber from './components/teams/TeamMembers.vue';
+import NotFound from './components/nav/NotFound.vue';
 
 const app = createApp(App);
 
@@ -26,6 +27,10 @@ const router = createRouter({
     {
       path: '/users',
       component: UserLists
+    },
+    {
+      path: '/:notFound(.*)',
+      component: NotFound
     }
   ],
   history: createWebHistory(),
