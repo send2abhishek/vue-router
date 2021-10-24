@@ -18,7 +18,8 @@ const router = createRouter({
       component: UserLists
     }
   ],
-  history: createWebHistory()
+  history: createWebHistory(),
+  linkActiveClass: 'active'
 });
 app.use(router);
 app.mount('#app');
