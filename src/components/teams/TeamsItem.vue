@@ -15,10 +15,15 @@ export default {
       // this will usseful when you change the path of the route it will still work because we modified the route path not name
       // same you can use route push() method too
       // always prefer named routes instead of path routes
+      // also you can pass the query params if you need. query params is always optional
       return {
         name: 'team-members',
         params: {
           teamId: this.id,
+        },
+        query: {
+          sort: 'asc',
+          data: 'latest',
         },
       };
     },
